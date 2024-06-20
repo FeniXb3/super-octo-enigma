@@ -7,38 +7,38 @@ public class Player
 	
 	public void Display()
 	{
-        Console.SetCursorPosition(Position.x, Position.y);
+        Console.SetCursorPosition(Position.X, Position.Y);
 		Console.Write(Visuals);
 	}
 
     public void MoveTo(Point targetPoint)
     {
-        PreviousPosition.x = Position.x;
-        PreviousPosition.y = Position.y;
+        PreviousPosition.X = Position.X;
+        PreviousPosition.Y = Position.Y;
 
-        Position.x = targetPoint.x;
-        Position.y = targetPoint.y;
+        Position.X = targetPoint.X;
+        Position.Y = targetPoint.Y;
     }
     
     public Point GetNextPosition()
     {
-        Point point = new Point(Position.x, Position.y);
+        Point point = new Point(Position.X, Position.Y);
         ConsoleKeyInfo keyInfo = Console.ReadKey(true);
         if (keyInfo.Key == ConsoleKey.D)
         {
-            point.x += 1;
+            point.X += 1;
         }
         else if (keyInfo.Key == ConsoleKey.A)
         {
-            point.x -= 1;
+            point.X -= 1;
         }
         else if (keyInfo.Key == ConsoleKey.W)
         {
-            point.y -= 1;
+            point.Y -= 1;
         }
         else if (keyInfo.Key == ConsoleKey.S)
         {
-            point.y += 1;
+            point.Y += 1;
         }
         
         return point;
