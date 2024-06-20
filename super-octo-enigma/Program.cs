@@ -4,6 +4,7 @@ public class Program
 {
 	public static void Main()
 	{
+        Console.CursorVisible = false;
         Console.Clear();
 		Player hero = new Player();
         Map map = new Map();
