@@ -1,27 +1,28 @@
 public class Player
 {
-	public string visuals = "@";
-    public Point position = new Point(2, 3);
-    public Point previousPosition = new Point(2, 3);
+
+    public string Visuals { get; private set; } = "@";
+    public Point Position { get; private set; } = new Point(2, 3);
+    public Point PreviousPosition { get; private set; } = new Point(2, 3);
 	
 	public void Display()
 	{
-        Console.SetCursorPosition(position.x, position.y);
-		Console.Write(visuals);
+        Console.SetCursorPosition(Position.x, Position.y);
+		Console.Write(Visuals);
 	}
 
     public void MoveTo(Point targetPoint)
     {
-        previousPosition.x = position.x;
-        previousPosition.y = position.y;
+        PreviousPosition.x = Position.x;
+        PreviousPosition.y = Position.y;
 
-        position.x = targetPoint.x;
-        position.y = targetPoint.y;
+        Position.x = targetPoint.x;
+        Position.y = targetPoint.y;
     }
     
     public Point GetNextPosition()
     {
-        Point point = new Point(position.x, position.y);
+        Point point = new Point(Position.x, Position.y);
         ConsoleKeyInfo keyInfo = Console.ReadKey(true);
         if (keyInfo.Key == ConsoleKey.D)
         {
