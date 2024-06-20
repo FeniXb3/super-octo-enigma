@@ -1,5 +1,3 @@
-
-
 class Map
 {
     string[] mapData = new string[]{

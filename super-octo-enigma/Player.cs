@@ -15,21 +15,12 @@ public class Player
         previousPosition.x = position.x;
         previousPosition.y = position.y;
 
-        // position = targetPoint;
         position.x = targetPoint.x;
         position.y = targetPoint.y;
     }
     
     public Point GetNextPosition()
     {
-        // Point point = new Point();
-        // point.x = 2;
-        // point.y = 5;
-        // Point point = new Point()
-        // {
-        //     x = 2,
-        //     y = 5
-        // };
         Point point = new Point(position.x, position.y);
         ConsoleKeyInfo keyInfo = Console.ReadKey(true);
         if (keyInfo.Key == ConsoleKey.D)
@@ -52,24 +43,3 @@ public class Player
         return point;
     }
 }
-
-/*
-Klasa Player
-
-dane:
-- pozycja
-- zdrowie (aktualne/maksymalne)
-- bazowy atak
-- reprezentacja graficzna
-- pancerz
-
-akcje:
-- poruszanie się
-- atak
-- podnoszenie przedmiotów
-- obrywanie
-- leczenie
-- wyświetlenie na ekranie
-- animacja
-
-*/

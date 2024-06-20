@@ -21,24 +21,3 @@ public class Program
         }
 	}
 }
-
-/*
-Klasa Player
-
-dane:
-- pozycja
-- zdrowie (aktualne/maksymalne)
-- bazowy atak
-- reprezentacja graficzna
-- pancerz
-
-akcje:
-- poruszanie się
-- atak
-- podnoszenie przedmiotów
-- obrywanie
-- leczenie
-- wyświetlenie na ekranie
-- animacja
-
-*/
