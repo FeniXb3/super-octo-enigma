@@ -8,8 +8,9 @@ public class Program
         Console.Clear();
 		Player hero = new Player();
         Map map = new Map();
-        map.Display();
-		hero.Display();
+        Point mapOrigin = new Point(5, 3);
+        map.Display(mapOrigin);
+        map.DrawSomethingAt(hero.visuals, hero.position);
         while(true)
         {
             Point nextPosition = hero.GetNextPosition();
@@ -17,7 +18,7 @@ public class Program
             {
                 hero.MoveTo(nextPosition);
                 map.RedrawCellAt(hero.previousPosition);
-                hero.Display();
+                map.DrawSomethingAt(hero.visuals, hero.position);
             }
         }
 	}

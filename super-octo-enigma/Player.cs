@@ -1,7 +1,7 @@
 public class Player
 {
-	string visuals = "@";
-    Point position = new Point(2, 3);
+	public string visuals = "@";
+    public Point position = new Point(2, 3);
     public Point previousPosition = new Point(2, 3);
 	
 	public void Display()

@@ -10,13 +10,31 @@ class Map
         "#.......######",
         "#########",
     };
+    private Point origin = new Point(0, 0);
 
-    public void Display()
+    public void Display(Point mapOrigin)
     {
+        origin = mapOrigin;
+        Console.CursorTop = mapOrigin.y;
         foreach (string row in mapData)
         {
+            Console.CursorLeft = mapOrigin.x;
             Console.WriteLine(row);
         }
+    }
+
+    internal void DrawSomethingAt(string visuals, Point position)
+    {
+        SetCursorPositionWithOrigin(position);
+        Console.Write(visuals);
+    }
+
+    private void SetCursorPositionWithOrigin(Point position)
+    {
+        int x = position.x + origin.x;
+        int y = position.y + origin.y;
+
+        Console.SetCursorPosition(x, y);
     }
 
     internal bool IsPositionCorrect(Point position)
@@ -37,7 +55,7 @@ class Map
         string row = mapData[position.y];
         char cell = row[position.x];
 
-        Console.SetCursorPosition(position.x, position.y);
+        SetCursorPositionWithOrigin(position);
         Console.Write(cell);
         // To poniżej to to samo co kilka poprzednich linijek
         // Console.SetCursorPosition(position.x, position.y);
