@@ -1,3 +1,5 @@
+using System.Runtime.Serialization;
+
 class Map
 {
     string[] mapData = new string[]{
@@ -14,6 +16,24 @@ class Map
 
     public void Display(Point mapOrigin)
     {
+        int sizeY = mapData.Length;
+        int sizeX = mapData[0].Length;
+
+        foreach (string row in mapData)
+        {
+            if (row.Length > sizeX)
+            {
+                sizeX = row.Length;
+            }
+        }
+
+        int drawingHeight = sizeY + mapOrigin.Y;
+        int drawingWidth = sizeX + mapOrigin.X;
+        if (drawingHeight >= Console.BufferHeight || drawingWidth >= Console.BufferWidth)
+        {
+            throw new WindowToSmallToDrawException(new Point(drawingWidth, drawingHeight));
+        }
+
         origin = mapOrigin;
         Console.CursorTop = mapOrigin.Y;
         foreach (string row in mapData)
@@ -21,6 +41,7 @@ class Map
             Console.CursorLeft = mapOrigin.X;
             Console.WriteLine(row);
         }
+    
     }
 
     internal void DrawSomethingAt(string visuals, Point position)
