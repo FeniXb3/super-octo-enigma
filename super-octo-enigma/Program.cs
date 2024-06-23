@@ -29,7 +29,8 @@ public class Program
         catch (WindowToSmallToDrawException ex)
         {
             Console.WriteLine("Terminal window is to small to draw map. Make it bigger and restart the game.");
-            Console.WriteLine($"Minimum required window size is ({ex.ExpectedSize.X}, {ex.ExpectedSize.Y})");
+            Console.WriteLine(ex.Message);
+            // Console.WriteLine($"Minimum required window size is ({ex.ExpectedSize.X}, {ex.ExpectedSize.Y})");
             Console.WriteLine("Press any key to close...");
             Console.ReadKey(true);
         }
