@@ -8,6 +8,7 @@ public class Program
         Console.Clear();
         Point startingPoint  = new Point(2, 3);
 		Player hero = new Player("@", startingPoint);
+        Enemy troll = new Enemy("T", new Point(4, 5));
         Map map = new Map();
         Point mapOrigin = new Point(5, 3);
 
@@ -15,6 +16,8 @@ public class Program
         {
             map.Display(mapOrigin);
             map.DrawSomethingAt(hero.Visuals, hero.Position);
+
+            map.DrawSomethingAt(troll.Visuals, troll.Position);
             while(true)
             {
                 Point nextPosition = hero.GetNextPosition();
@@ -23,6 +26,14 @@ public class Program
                     hero.MoveTo(nextPosition);
                     map.RedrawCellAt(hero.PreviousPosition);
                     map.DrawSomethingAt(hero.Visuals, hero.Position);
+                }
+
+                nextPosition = troll.GetNextPosition();
+                if (map.IsPositionCorrect(nextPosition))
+                {
+                    troll.MoveTo(nextPosition);
+                    map.RedrawCellAt(troll.PreviousPosition);
+                    map.DrawSomethingAt(troll.Visuals, troll.Position);
                 }
             }
         }
