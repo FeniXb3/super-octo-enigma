@@ -10,7 +10,7 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/super-octo-enigma/bin/Debug/net7.0/super-octo-enigma.dll",
+            "program": "${workspaceFolder}/super-octo-enigma/bin/Debug/net8.0/super-octo-enigma.dll",
             "args": [],
             "cwd": "${workspaceFolder}/super-octo-enigma",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
